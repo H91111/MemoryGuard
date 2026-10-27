@@ -1,0 +1,32 @@
+{
+  "python": "3.11.15",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "core_dependencies": [],
+  "optional_packages": [
+    {
+      "name": "torch",
+      "installed_version": null
+    },
+    {
+      "name": "transformers",
+      "installed_version": null
+    },
+    {
+      "name": "numpy",
+      "installed_version": null
+    },
+    {
+      "name": "tokenizers",
+      "installed_version": null
+    },
+    {
+      "name": "safetensors",
+      "installed_version": null
+    },
+    {
+      "name": "huggingface-hub",
+      "installed_version": null
+    }
+  ],
+  "note": "Availability only; not evidence of model execution."
+}

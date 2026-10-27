@@ -1,0 +1,23 @@
+{
+  "protocol": "synthetic-regression-v2",
+  "context_policy": "governed representative evidence; baseline raw observations",
+  "split": "test",
+  "methods": [
+    "B0",
+    "B2",
+    "B3"
+  ],
+  "budget": 2048,
+  "budget_unit": "UTF-8 bytes, conservative token upper bound",
+  "top_k": 8,
+  "generator": "deterministic-tool-planner-v1",
+  "extractor": "conservative-zh-v1",
+  "model": null,
+  "input_sha256": "6a749a4dead699246dbdd7b7d6d5f33257f281cb306fd263378c22690857bc85",
+  "seed": 42,
+  "python": "3.11.15",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "scoring": "independent mock specs; exact tool args; no feedback writes",
+  "data_status": "developer-visible, self-authored synthetic fixtures; exploratory",
+  "config_hash": "41f5ec157ac32465a2e294d3d033f0ba6ebdf2b7e3b59cc4f56874d2f8841ee3"
+}

@@ -1,0 +1,320 @@
+{
+  "note": "自编合成回归集；共享规则提取与确定性规划器。结果仅验证记忆策略，无盲测标注，不主张通用智能体或生成模型收益。",
+  "stream_count": 8,
+  "event_count": 96,
+  "unique_task_count": 40,
+  "probe_executions_per_method": 144,
+  "diagnostic_executions_per_method": 16,
+  "total_executions": 480,
+  "extractor": "conservative-zh-v1",
+  "generator": "deterministic-tool-planner-v1",
+  "model": null,
+  "config_hash": "41f5ec157ac32465a2e294d3d033f0ba6ebdf2b7e3b59cc4f56874d2f8841ee3",
+  "methods": [
+    {
+      "method": "B0",
+      "label": "无跨任务记忆",
+      "backend": "none",
+      "success": 0,
+      "answerable": 88,
+      "correct_clarify": 56,
+      "unanswerable": 56,
+      "wrong_strong_answer": 0,
+      "excess_clarify": 88,
+      "stale_misuse": 0,
+      "stale_eligible": 32,
+      "anchor_success": 0,
+      "anchor_total": 48,
+      "anchor_initial_success_later_failed": 0,
+      "macro_stream_success": 0.0,
+      "per_stream": [
+        {
+          "stream_id": "path-migration",
+          "success": 0,
+          "answerable": 11,
+          "success_rate": 0.0
+        },
+        {
+          "stream_id": "token-rename",
+          "success": 0,
+          "answerable": 11,
+          "success_rate": 0.0
+        },
+        {
+          "stream_id": "untrusted-patch",
+          "success": 0,
+          "answerable": 11,
+          "success_rate": 0.0
+        },
+        {
+          "stream_id": "delayed-review",
+          "success": 0,
+          "answerable": 11,
+          "success_rate": 0.0
+        },
+        {
+          "stream_id": "cross-project",
+          "success": 0,
+          "answerable": 12,
+          "success_rate": 0.0
+        },
+        {
+          "stream_id": "negative-note",
+          "success": 0,
+          "answerable": 10,
+          "success_rate": 0.0
+        },
+        {
+          "stream_id": "scoped-repair",
+          "success": 0,
+          "answerable": 10,
+          "success_rate": 0.0
+        },
+        {
+          "stream_id": "conditional-note",
+          "success": 0,
+          "answerable": 12,
+          "success_rate": 0.0
+        }
+      ],
+      "adaptation_before_correct_clarify": 8,
+      "adaptation_after_success": 0,
+      "diagnostic_pairs": 8,
+      "mean_probe_ms": 0.0061,
+      "negative_impact": {
+        "anchor_success_to_failure": {
+          "count": 0,
+          "eligible": 0,
+          "rate": null
+        },
+        "stale_misuse": {
+          "count": 0,
+          "eligible": 32,
+          "rate": 0.0
+        },
+        "wrong_strong_answer": {
+          "count": 0,
+          "eligible": 56,
+          "rate": 0.0
+        },
+        "excess_clarify": {
+          "count": 88,
+          "eligible": 88,
+          "rate": 1.0
+        },
+        "cross_scope_cited_calls": {
+          "count": 0,
+          "eligible": 0,
+          "rate": null
+        },
+        "note": "基于同一合成集与独立模拟器评分；分母为0时rate=null。旧任务相邻成功→失败不等于通用模型灾难性遗忘。"
+      }
+    },
+    {
+      "method": "B2",
+      "label": "同范围最近优先",
+      "backend": "latest",
+      "success": 70,
+      "answerable": 88,
+      "correct_clarify": 48,
+      "unanswerable": 56,
+      "wrong_strong_answer": 8,
+      "excess_clarify": 18,
+      "stale_misuse": 0,
+      "stale_eligible": 32,
+      "anchor_success": 48,
+      "anchor_total": 48,
+      "anchor_initial_success_later_failed": 0,
+      "macro_stream_success": 0.7956439393939393,
+      "per_stream": [
+        {
+          "stream_id": "path-migration",
+          "success": 10,
+          "answerable": 11,
+          "success_rate": 0.9090909090909091
+        },
+        {
+          "stream_id": "token-rename",
+          "success": 8,
+          "answerable": 11,
+          "success_rate": 0.7272727272727273
+        },
+        {
+          "stream_id": "untrusted-patch",
+          "success": 9,
+          "answerable": 11,
+          "success_rate": 0.8181818181818182
+        },
+        {
+          "stream_id": "delayed-review",
+          "success": 8,
+          "answerable": 11,
+          "success_rate": 0.7272727272727273
+        },
+        {
+          "stream_id": "cross-project",
+          "success": 10,
+          "answerable": 12,
+          "success_rate": 0.8333333333333334
+        },
+        {
+          "stream_id": "negative-note",
+          "success": 8,
+          "answerable": 10,
+          "success_rate": 0.8
+        },
+        {
+          "stream_id": "scoped-repair",
+          "success": 8,
+          "answerable": 10,
+          "success_rate": 0.8
+        },
+        {
+          "stream_id": "conditional-note",
+          "success": 9,
+          "answerable": 12,
+          "success_rate": 0.75
+        }
+      ],
+      "adaptation_before_correct_clarify": 2,
+      "adaptation_after_success": 2,
+      "diagnostic_pairs": 8,
+      "mean_probe_ms": 0.0342,
+      "negative_impact": {
+        "anchor_success_to_failure": {
+          "count": 0,
+          "eligible": 40,
+          "rate": 0.0
+        },
+        "stale_misuse": {
+          "count": 0,
+          "eligible": 32,
+          "rate": 0.0
+        },
+        "wrong_strong_answer": {
+          "count": 8,
+          "eligible": 56,
+          "rate": 0.14285714285714285
+        },
+        "excess_clarify": {
+          "count": 18,
+          "eligible": 88,
+          "rate": 0.20454545454545456
+        },
+        "cross_scope_cited_calls": {
+          "count": 0,
+          "eligible": 78,
+          "rate": 0.0
+        },
+        "note": "基于同一合成集与独立模拟器评分；分母为0时rate=null。旧任务相邻成功→失败不等于通用模型灾难性遗忘。"
+      }
+    },
+    {
+      "method": "B3",
+      "label": "规则 + 字符检索",
+      "backend": "character",
+      "success": 88,
+      "answerable": 88,
+      "correct_clarify": 56,
+      "unanswerable": 56,
+      "wrong_strong_answer": 0,
+      "excess_clarify": 0,
+      "stale_misuse": 0,
+      "stale_eligible": 32,
+      "anchor_success": 48,
+      "anchor_total": 48,
+      "anchor_initial_success_later_failed": 0,
+      "macro_stream_success": 1.0,
+      "per_stream": [
+        {
+          "stream_id": "path-migration",
+          "success": 11,
+          "answerable": 11,
+          "success_rate": 1.0
+        },
+        {
+          "stream_id": "token-rename",
+          "success": 11,
+          "answerable": 11,
+          "success_rate": 1.0
+        },
+        {
+          "stream_id": "untrusted-patch",
+          "success": 11,
+          "answerable": 11,
+          "success_rate": 1.0
+        },
+        {
+          "stream_id": "delayed-review",
+          "success": 11,
+          "answerable": 11,
+          "success_rate": 1.0
+        },
+        {
+          "stream_id": "cross-project",
+          "success": 12,
+          "answerable": 12,
+          "success_rate": 1.0
+        },
+        {
+          "stream_id": "negative-note",
+          "success": 10,
+          "answerable": 10,
+          "success_rate": 1.0
+        },
+        {
+          "stream_id": "scoped-repair",
+          "success": 10,
+          "answerable": 10,
+          "success_rate": 1.0
+        },
+        {
+          "stream_id": "conditional-note",
+          "success": 12,
+          "answerable": 12,
+          "success_rate": 1.0
+        }
+      ],
+      "adaptation_before_correct_clarify": 8,
+      "adaptation_after_success": 8,
+      "diagnostic_pairs": 8,
+      "mean_probe_ms": 0.355,
+      "negative_impact": {
+        "anchor_success_to_failure": {
+          "count": 0,
+          "eligible": 40,
+          "rate": 0.0
+        },
+        "stale_misuse": {
+          "count": 0,
+          "eligible": 32,
+          "rate": 0.0
+        },
+        "wrong_strong_answer": {
+          "count": 0,
+          "eligible": 56,
+          "rate": 0.0
+        },
+        "excess_clarify": {
+          "count": 0,
+          "eligible": 88,
+          "rate": 0.0
+        },
+        "cross_scope_cited_calls": {
+          "count": 0,
+          "eligible": 88,
+          "rate": 0.0
+        },
+        "note": "基于同一合成集与独立模拟器评分；分母为0时rate=null。旧任务相邻成功→失败不等于通用模型灾难性遗忘。"
+      }
+    }
+  ],
+  "updates_exact_event_match": 96,
+  "updates_total_events": 96,
+  "model_load_seconds": 0.0,
+  "embedding_cache_texts": 0,
+  "embedding_forward_batches": 0,
+  "elapsed_seconds": 0.488,
+  "product_version": "0.2.0",
+  "context_policy": "governed retrieval keeps one representative evidence span per fact; full provenance remains in audit"
+}

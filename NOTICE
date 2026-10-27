@@ -1,0 +1,12 @@
+Memory Guard v0.1.0
+
+Original project implementation: event-source storage, scope-aware updates,
+conflict handling, audit workbench, synthetic fixtures and evaluation harness.
+AI-assisted implementation and documentation are disclosed in docs/ai-assistance.md.
+
+Optional third-party model: BAAI/bge-small-zh-v1.5, MIT, revision
+7999e1d3359715c523056ef9478215996d62a620.
+Upstream: https://huggingface.co/BAAI/bge-small-zh-v1.5
+Model weights and runtime dependencies are obtained separately and are NOT
+relicensed by this project's MIT license. Keep their original license files.
+See docs/resources.md and output/environment.json for dependency provenance.

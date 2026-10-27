@@ -1,0 +1,11 @@
+{
+  "event_id": "confirmed-observation-001",
+  "source_id": "human-reviewed",
+  "project": "Atlas",
+  "version_scope": "v2",
+  "text": "Atlas v2 使用 /auth/token。",
+  "confirmed": true,
+  "candidates": [
+    {"attribute": "login_path", "value": "/auth/token", "evidence_span": [0, 23]}
+  ]
+}

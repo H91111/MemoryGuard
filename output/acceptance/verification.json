@@ -1,0 +1,42 @@
+{
+  "tests": {
+    "exit_code": 0
+  },
+  "example": {
+    "exit_code": 0
+  },
+  "evaluation": {
+    "exit_code": 0
+  },
+  "browser": {
+    "url": "http://127.0.0.1:8876/",
+    "title": "Memory Guard · 持续学习负影响防护",
+    "viewports": [
+      "1440x1080",
+      "390x844"
+    ],
+    "browser": "Chrome / Playwright; Browser plugin not available",
+    "errors": [],
+    "checks": [
+      "initial task",
+      "impact history",
+      "readonly preview",
+      "acknowledgement gate",
+      "commit",
+      "conflict abstention",
+      "checkpoint restore",
+      "evidence inspection",
+      "evaluation view",
+      "blank workspace",
+      "custom project",
+      "session switch",
+      "mobile no horizontal overflow"
+    ]
+  },
+  "launcher": {
+    "result": "ready",
+    "command": "powershell -NoProfile -ExecutionPolicy Bypass -File start.ps1 -NoBrowser -Port 8877",
+    "port": 8877
+  },
+  "python": "3.11.15"
+}

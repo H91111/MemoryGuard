@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "memory-guard"
+version = "0.2.0"
+description = "Auditable, scoped memory governance for evolving developer API knowledge"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = []
+
+[project.optional-dependencies]
+semantic = ["torch==2.8.0", "transformers==4.57.1", "numpy>=1.26,<3"]
+
+[project.scripts]
+memory-guard = "memory_guard.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["memory_guard*", "evaluation*", "examples*"]
+
+[tool.setuptools.package-data]
+memory_guard = ["web/*.html", "web/*.css", "web/*.js", "web/*.svg"]
+evaluation = ["configs/*.md"]

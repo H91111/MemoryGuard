@@ -1,0 +1,7 @@
+{
+  "event_id": "custom-observation-001",
+  "source_id": "team-notes",
+  "project": "Atlas",
+  "version_scope": "v2",
+  "text": "Atlas v2 超时时间为 30秒。"
+}

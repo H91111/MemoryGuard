@@ -1,0 +1,181 @@
+{
+  "before_checkpoint": "cp_1_846cdb05d44d52a3",
+  "after_checkpoint": "cp_2_36a408c1360c519b",
+  "tasks": [
+    {
+      "task": {
+        "task_id": "Orion/v1/login",
+        "project": "Orion",
+        "version_scope": "v1"
+      },
+      "outcome": "blocked",
+      "before": {
+        "status": "call",
+        "tool_args": {
+          "project": "Orion",
+          "version": "v1",
+          "operation": "login",
+          "path": "/login",
+          "auth_field": "api_key",
+          "payload": {
+            "username": "demo"
+          }
+        },
+        "reason": "根据当前检查点内的适用证据生成工具调用",
+        "evidence_ids": [
+          "fact_cf481999285acc77c436",
+          "fact_2e1cfcdfc5d9e4d5b890"
+        ]
+      },
+      "after": {
+        "status": "clarify",
+        "tool_args": null,
+        "reason": "存在未决冲突，请提供授权纠错",
+        "evidence_ids": []
+      }
+    }
+  ],
+  "counts": {
+    "blocked": 1
+  },
+  "tested": 1,
+  "eligible": 1,
+  "availability_loss_rate": 1.0,
+  "unchanged_rate": 0.0,
+  "note": "按固定登录任务比较行为；不是正确率。参数变化可能是必要适应，冲突澄清可能是正确防护。无可调用旧任务时比率为空。",
+  "new_conflicts": [
+    "fact_cf481999285acc77c436",
+    "fact_bbb0d09650911fea6135"
+  ],
+  "decisions": [
+    {
+      "action": "conflicts",
+      "decision_id": "decision_7112363ce41989b11b38",
+      "event_id": "unverified",
+      "extractor_revision": "conservative-zh-v1",
+      "fact_ids": [
+        "fact_bbb0d09650911fea6135",
+        "fact_cf481999285acc77c436"
+      ],
+      "input_ids": [
+        "unverified",
+        "fact_bbb0d09650911fea6135",
+        "fact_cf481999285acc77c436"
+      ],
+      "reason": "同范围同属性存在不同值，缺少授权替代依据；保留全部断言并澄清",
+      "rule_version": "scope-evidence-v1",
+      "step": 2
+    }
+  ],
+  "pending": 0,
+  "requires_acknowledgement": true,
+  "risk": "review",
+  "after_hash": "0629c19c7b372b9b317ba7418fb18823f45bfcc7e85a42407104ee898c821e79"
+}
+学习门控：发现影响，保留原记忆，交给使用者复核。
+{
+  "task_id": "interactive",
+  "checkpoint_id": "cp_1_846cdb05d44d52a3",
+  "status": "call",
+  "tool_args": {
+    "project": "Orion",
+    "version": "v1",
+    "operation": "login",
+    "path": "/login",
+    "auth_field": "api_key",
+    "payload": {
+      "username": "demo"
+    }
+  },
+  "evidence_ids": [
+    "fact_cf481999285acc77c436",
+    "fact_2e1cfcdfc5d9e4d5b890"
+  ],
+  "reason": "根据当前检查点内的适用证据生成工具调用",
+  "token_usage": null,
+  "generator": "deterministic-tool-planner-v1",
+  "latency_ms": 0.318,
+  "memory_state_hash": "ed66ee13859bfc4c0a0057845182d453d21d179046e819c97dfc382195540275",
+  "context": {
+    "checkpoint_id": "cp_1_846cdb05d44d52a3",
+    "step": 1,
+    "status": "ok",
+    "facts": [
+      {
+        "attribute": "login_path",
+        "evidence_span": [
+          0,
+          12
+        ],
+        "project": "Orion",
+        "subject": "api",
+        "valid_from": null,
+        "valid_to": null,
+        "value": "/login",
+        "version_scope": "v1",
+        "fact_id": "fact_cf481999285acc77c436",
+        "created_step": 1,
+        "evidence": [
+          {
+            "event_id": "seed",
+            "step": 1,
+            "span": [
+              0,
+              12
+            ],
+            "source_id": "docs",
+            "text": "登录路径为 /login；认证字段为 api_key。"
+          }
+        ],
+        "text": "登录路径为 /login；认证字段为 api_key。",
+        "scores": {
+          "character": 0.247921,
+          "semantic": 0.0
+        },
+        "score": 0.24792117090841212,
+        "evidence_count": 1
+      },
+      {
+        "attribute": "auth_field",
+        "evidence_span": [
+          13,
+          26
+        ],
+        "project": "Orion",
+        "subject": "api",
+        "valid_from": null,
+        "valid_to": null,
+        "value": "api_key",
+        "version_scope": "v1",
+        "fact_id": "fact_2e1cfcdfc5d9e4d5b890",
+        "created_step": 1,
+        "evidence": [
+          {
+            "event_id": "seed",
+            "step": 1,
+            "span": [
+              13,
+              26
+            ],
+            "source_id": "docs",
+            "text": "登录路径为 /login；认证字段为 api_key。"
+          }
+        ],
+        "text": "登录路径为 /login；认证字段为 api_key。",
+        "scores": {
+          "character": 0.242006,
+          "semantic": 0.0
+        },
+        "score": 0.24200560038924734,
+        "evidence_count": 1
+      }
+    ],
+    "conflicts": [],
+    "missing": [],
+    "context_units": 1005,
+    "budget_unit": "UTF-8 bytes (conservative token upper bound)",
+    "mode": "character",
+    "truncated": false
+  },
+  "output_hash": "b0cabeb2516848837ca3921eee41f0c1cc6e881983330ec5c9b8c82b36a15c95"
+}
