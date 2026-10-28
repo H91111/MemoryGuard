@@ -1,0 +1,735 @@
+{
+  "model_calls": 8,
+  "errors": 0,
+  "updates": [
+    {
+      "step": 1,
+      "preflight_generator": "deterministic-tool-planner-v1",
+      "report": {
+        "before_checkpoint": "cp_0_5323f0778255f76e",
+        "after_checkpoint": "cp_1_ead6e61d5603f57f",
+        "tasks": [],
+        "counts": {},
+        "tested": 0,
+        "eligible": 0,
+        "availability_loss_rate": null,
+        "unchanged_rate": null,
+        "note": "按固定登录任务比较行为；不是正确率。参数变化可能是必要适应，冲突澄清可能是正确防护。无可调用旧任务时比率为空。",
+        "new_conflicts": [],
+        "decisions": [
+          {
+            "action": "supplement",
+            "decision_id": "decision_cb8e205c9600b48d97c7",
+            "event_id": "demo-01",
+            "extractor_revision": "conservative-zh-v1",
+            "fact_ids": [
+              "fact_40e90c4cf42e16c2e104"
+            ],
+            "input_ids": [
+              "demo-01",
+              "fact_40e90c4cf42e16c2e104"
+            ],
+            "reason": "新增独立属性事实",
+            "rule_version": "scope-evidence-v1",
+            "step": 1
+          },
+          {
+            "action": "supplement",
+            "decision_id": "decision_d8b2adf307437d508446",
+            "event_id": "demo-01",
+            "extractor_revision": "conservative-zh-v1",
+            "fact_ids": [
+              "fact_6623ba50f4fb92947875"
+            ],
+            "input_ids": [
+              "demo-01",
+              "fact_6623ba50f4fb92947875"
+            ],
+            "reason": "新增独立属性事实",
+            "rule_version": "scope-evidence-v1",
+            "step": 1
+          }
+        ],
+        "pending": 0,
+        "requires_acknowledgement": false,
+        "risk": "uncovered",
+        "after_hash": "361adda74fc1bd16f8029eec1219e316f4191e114243ba8886769bc8b997359b"
+      },
+      "acknowledgement": "scripted demo acknowledgement, not a human review"
+    },
+    {
+      "step": 2,
+      "preflight_generator": "deterministic-tool-planner-v1",
+      "report": {
+        "before_checkpoint": "cp_1_ead6e61d5603f57f",
+        "after_checkpoint": "cp_2_d4bbfc414b54cef4",
+        "tasks": [
+          {
+            "task": {
+              "task_id": "Atlas/v1/login",
+              "project": "Atlas",
+              "version_scope": "v1"
+            },
+            "outcome": "retained",
+            "before": {
+              "status": "call",
+              "tool_args": {
+                "project": "Atlas",
+                "version": "v1",
+                "operation": "login",
+                "path": "/api/login",
+                "auth_field": "api_key",
+                "payload": {
+                  "username": "demo"
+                }
+              },
+              "reason": "根据当前检查点内的适用证据生成工具调用",
+              "evidence_ids": [
+                "fact_6623ba50f4fb92947875",
+                "fact_40e90c4cf42e16c2e104"
+              ]
+            },
+            "after": {
+              "status": "call",
+              "tool_args": {
+                "project": "Atlas",
+                "version": "v1",
+                "operation": "login",
+                "path": "/api/login",
+                "auth_field": "api_key",
+                "payload": {
+                  "username": "demo"
+                }
+              },
+              "reason": "根据当前检查点内的适用证据生成工具调用",
+              "evidence_ids": [
+                "fact_6623ba50f4fb92947875",
+                "fact_40e90c4cf42e16c2e104"
+              ]
+            }
+          }
+        ],
+        "counts": {
+          "retained": 1
+        },
+        "tested": 1,
+        "eligible": 1,
+        "availability_loss_rate": 0.0,
+        "unchanged_rate": 1.0,
+        "note": "按固定登录任务比较行为；不是正确率。参数变化可能是必要适应，冲突澄清可能是正确防护。无可调用旧任务时比率为空。",
+        "new_conflicts": [],
+        "decisions": [
+          {
+            "action": "duplicate",
+            "decision_id": "decision_7aed6daa1fcd64a47cbf",
+            "event_id": "demo-02",
+            "extractor_revision": "conservative-zh-v1",
+            "fact_ids": [
+              "fact_6623ba50f4fb92947875"
+            ],
+            "input_ids": [
+              "demo-02",
+              "fact_6623ba50f4fb92947875"
+            ],
+            "reason": "同范围、同值、同有效时间，关联原文证据，不新增逻辑事实",
+            "rule_version": "scope-evidence-v1",
+            "step": 2
+          }
+        ],
+        "pending": 0,
+        "requires_acknowledgement": false,
+        "risk": "clear",
+        "after_hash": "6fe7c8453f51d597607f737406a4edb4d10b4af4b4818f5ad6f015674fff9198"
+      },
+      "acknowledgement": "scripted demo acknowledgement, not a human review"
+    },
+    {
+      "step": 3,
+      "preflight_generator": "deterministic-tool-planner-v1",
+      "report": {
+        "before_checkpoint": "cp_2_d4bbfc414b54cef4",
+        "after_checkpoint": "cp_3_832c2d9b1c8bb921",
+        "tasks": [
+          {
+            "task": {
+              "task_id": "Atlas/v1/login",
+              "project": "Atlas",
+              "version_scope": "v1"
+            },
+            "outcome": "retained",
+            "before": {
+              "status": "call",
+              "tool_args": {
+                "project": "Atlas",
+                "version": "v1",
+                "operation": "login",
+                "path": "/api/login",
+                "auth_field": "api_key",
+                "payload": {
+                  "username": "demo"
+                }
+              },
+              "reason": "根据当前检查点内的适用证据生成工具调用",
+              "evidence_ids": [
+                "fact_6623ba50f4fb92947875",
+                "fact_40e90c4cf42e16c2e104"
+              ]
+            },
+            "after": {
+              "status": "call",
+              "tool_args": {
+                "project": "Atlas",
+                "version": "v1",
+                "operation": "login",
+                "path": "/api/login",
+                "auth_field": "api_key",
+                "payload": {
+                  "username": "demo"
+                }
+              },
+              "reason": "根据当前检查点内的适用证据生成工具调用",
+              "evidence_ids": [
+                "fact_6623ba50f4fb92947875",
+                "fact_40e90c4cf42e16c2e104"
+              ]
+            }
+          }
+        ],
+        "counts": {
+          "retained": 1
+        },
+        "tested": 1,
+        "eligible": 1,
+        "availability_loss_rate": 0.0,
+        "unchanged_rate": 1.0,
+        "note": "按固定登录任务比较行为；不是正确率。参数变化可能是必要适应，冲突澄清可能是正确防护。无可调用旧任务时比率为空。",
+        "new_conflicts": [],
+        "decisions": [
+          {
+            "action": "coexist",
+            "decision_id": "decision_7c6b2c61798bfd530579",
+            "event_id": "demo-03",
+            "extractor_revision": "conservative-zh-v1",
+            "fact_ids": [
+              "fact_b1d647c2629f4d8b9a29"
+            ],
+            "input_ids": [
+              "demo-03",
+              "fact_b1d647c2629f4d8b9a29"
+            ],
+            "reason": "不同项目/版本/有效时间并存",
+            "rule_version": "scope-evidence-v1",
+            "step": 3
+          },
+          {
+            "action": "coexist",
+            "decision_id": "decision_d0e63a87b4af965bb128",
+            "event_id": "demo-03",
+            "extractor_revision": "conservative-zh-v1",
+            "fact_ids": [
+              "fact_3c93ead92d5f3418c162"
+            ],
+            "input_ids": [
+              "demo-03",
+              "fact_3c93ead92d5f3418c162"
+            ],
+            "reason": "不同项目/版本/有效时间并存",
+            "rule_version": "scope-evidence-v1",
+            "step": 3
+          }
+        ],
+        "pending": 0,
+        "requires_acknowledgement": false,
+        "risk": "clear",
+        "after_hash": "a301176e0d8bcc20c59fb232d13bf6e05fe0df8993394e8319655f12e0716d52"
+      },
+      "acknowledgement": "scripted demo acknowledgement, not a human review"
+    },
+    {
+      "step": 4,
+      "preflight_generator": "deterministic-tool-planner-v1",
+      "report": {
+        "before_checkpoint": "cp_3_832c2d9b1c8bb921",
+        "after_checkpoint": "cp_4_9496eb683334ce01",
+        "tasks": [
+          {
+            "task": {
+              "task_id": "Atlas/v1/login",
+              "project": "Atlas",
+              "version_scope": "v1"
+            },
+            "outcome": "retained",
+            "before": {
+              "status": "call",
+              "tool_args": {
+                "project": "Atlas",
+                "version": "v1",
+                "operation": "login",
+                "path": "/api/login",
+                "auth_field": "api_key",
+                "payload": {
+                  "username": "demo"
+                }
+              },
+              "reason": "根据当前检查点内的适用证据生成工具调用",
+              "evidence_ids": [
+                "fact_6623ba50f4fb92947875",
+                "fact_40e90c4cf42e16c2e104"
+              ]
+            },
+            "after": {
+              "status": "call",
+              "tool_args": {
+                "project": "Atlas",
+                "version": "v1",
+                "operation": "login",
+                "path": "/api/login",
+                "auth_field": "api_key",
+                "payload": {
+                  "username": "demo"
+                }
+              },
+              "reason": "根据当前检查点内的适用证据生成工具调用",
+              "evidence_ids": [
+                "fact_6623ba50f4fb92947875",
+                "fact_40e90c4cf42e16c2e104"
+              ]
+            }
+          },
+          {
+            "task": {
+              "task_id": "Atlas/v2/login",
+              "project": "Atlas",
+              "version_scope": "v2"
+            },
+            "outcome": "retained",
+            "before": {
+              "status": "call",
+              "tool_args": {
+                "project": "Atlas",
+                "version": "v2",
+                "operation": "login",
+                "path": "/auth/token",
+                "auth_field": "access_token",
+                "payload": {
+                  "username": "demo"
+                }
+              },
+              "reason": "根据当前检查点内的适用证据生成工具调用",
+              "evidence_ids": [
+                "fact_3c93ead92d5f3418c162",
+                "fact_b1d647c2629f4d8b9a29"
+              ]
+            },
+            "after": {
+              "status": "call",
+              "tool_args": {
+                "project": "Atlas",
+                "version": "v2",
+                "operation": "login",
+                "path": "/auth/token",
+                "auth_field": "access_token",
+                "payload": {
+                  "username": "demo"
+                }
+              },
+              "reason": "根据当前检查点内的适用证据生成工具调用",
+              "evidence_ids": [
+                "fact_3c93ead92d5f3418c162",
+                "fact_b1d647c2629f4d8b9a29"
+              ]
+            }
+          }
+        ],
+        "counts": {
+          "retained": 2
+        },
+        "tested": 2,
+        "eligible": 2,
+        "availability_loss_rate": 0.0,
+        "unchanged_rate": 1.0,
+        "note": "按固定登录任务比较行为；不是正确率。参数变化可能是必要适应，冲突澄清可能是正确防护。无可调用旧任务时比率为空。",
+        "new_conflicts": [],
+        "decisions": [
+          {
+            "action": "coexist",
+            "decision_id": "decision_e14eec539b6a005c1f99",
+            "event_id": "demo-04",
+            "extractor_revision": "conservative-zh-v1",
+            "fact_ids": [
+              "fact_4b9ccc1fa8a9725a0133"
+            ],
+            "input_ids": [
+              "demo-04",
+              "fact_4b9ccc1fa8a9725a0133"
+            ],
+            "reason": "不同项目/版本/有效时间并存",
+            "rule_version": "scope-evidence-v1",
+            "step": 4
+          },
+          {
+            "action": "coexist",
+            "decision_id": "decision_fec1219d41b88c4c0a02",
+            "event_id": "demo-04",
+            "extractor_revision": "conservative-zh-v1",
+            "fact_ids": [
+              "fact_fea15b32b59079ba02c2"
+            ],
+            "input_ids": [
+              "demo-04",
+              "fact_fea15b32b59079ba02c2"
+            ],
+            "reason": "不同项目/版本/有效时间并存",
+            "rule_version": "scope-evidence-v1",
+            "step": 4
+          }
+        ],
+        "pending": 0,
+        "requires_acknowledgement": false,
+        "risk": "clear",
+        "after_hash": "8f55273e617e2abe9039f85626b4d87fe1b11d4e9a3f39ca19168332d664a491"
+      },
+      "acknowledgement": "scripted demo acknowledgement, not a human review"
+    },
+    {
+      "step": 5,
+      "preflight_generator": "deterministic-tool-planner-v1",
+      "report": {
+        "before_checkpoint": "cp_4_9496eb683334ce01",
+        "after_checkpoint": "cp_5_ee752370738cd94f",
+        "tasks": [
+          {
+            "task": {
+              "task_id": "Atlas/v1/login",
+              "project": "Atlas",
+              "version_scope": "v1"
+            },
+            "outcome": "retained",
+            "before": {
+              "status": "call",
+              "tool_args": {
+                "project": "Atlas",
+                "version": "v1",
+                "operation": "login",
+                "path": "/api/login",
+                "auth_field": "api_key",
+                "payload": {
+                  "username": "demo"
+                }
+              },
+              "reason": "根据当前检查点内的适用证据生成工具调用",
+              "evidence_ids": [
+                "fact_6623ba50f4fb92947875",
+                "fact_40e90c4cf42e16c2e104"
+              ]
+            },
+            "after": {
+              "status": "call",
+              "tool_args": {
+                "project": "Atlas",
+                "version": "v1",
+                "operation": "login",
+                "path": "/api/login",
+                "auth_field": "api_key",
+                "payload": {
+                  "username": "demo"
+                }
+              },
+              "reason": "根据当前检查点内的适用证据生成工具调用",
+              "evidence_ids": [
+                "fact_6623ba50f4fb92947875",
+                "fact_40e90c4cf42e16c2e104"
+              ]
+            }
+          },
+          {
+            "task": {
+              "task_id": "Atlas/v2/login",
+              "project": "Atlas",
+              "version_scope": "v2"
+            },
+            "outcome": "blocked",
+            "before": {
+              "status": "call",
+              "tool_args": {
+                "project": "Atlas",
+                "version": "v2",
+                "operation": "login",
+                "path": "/auth/token",
+                "auth_field": "access_token",
+                "payload": {
+                  "username": "demo"
+                }
+              },
+              "reason": "根据当前检查点内的适用证据生成工具调用",
+              "evidence_ids": [
+                "fact_3c93ead92d5f3418c162",
+                "fact_b1d647c2629f4d8b9a29"
+              ]
+            },
+            "after": {
+              "status": "clarify",
+              "tool_args": null,
+              "reason": "存在未决冲突，请提供授权纠错",
+              "evidence_ids": []
+            }
+          },
+          {
+            "task": {
+              "task_id": "Beacon/v2/login",
+              "project": "Beacon",
+              "version_scope": "v2"
+            },
+            "outcome": "retained",
+            "before": {
+              "status": "call",
+              "tool_args": {
+                "project": "Beacon",
+                "version": "v2",
+                "operation": "login",
+                "path": "/session/create",
+                "auth_field": "bearer",
+                "payload": {
+                  "username": "demo"
+                }
+              },
+              "reason": "根据当前检查点内的适用证据生成工具调用",
+              "evidence_ids": [
+                "fact_4b9ccc1fa8a9725a0133",
+                "fact_fea15b32b59079ba02c2"
+              ]
+            },
+            "after": {
+              "status": "call",
+              "tool_args": {
+                "project": "Beacon",
+                "version": "v2",
+                "operation": "login",
+                "path": "/session/create",
+                "auth_field": "bearer",
+                "payload": {
+                  "username": "demo"
+                }
+              },
+              "reason": "根据当前检查点内的适用证据生成工具调用",
+              "evidence_ids": [
+                "fact_4b9ccc1fa8a9725a0133",
+                "fact_fea15b32b59079ba02c2"
+              ]
+            }
+          }
+        ],
+        "counts": {
+          "retained": 2,
+          "blocked": 1
+        },
+        "tested": 3,
+        "eligible": 3,
+        "availability_loss_rate": 0.3333333333333333,
+        "unchanged_rate": 0.6666666666666666,
+        "note": "按固定登录任务比较行为；不是正确率。参数变化可能是必要适应，冲突澄清可能是正确防护。无可调用旧任务时比率为空。",
+        "new_conflicts": [
+          "fact_3c93ead92d5f3418c162",
+          "fact_d771158ec0741cd948a6"
+        ],
+        "decisions": [
+          {
+            "action": "conflicts",
+            "decision_id": "decision_1bb7e4d50b55390f6a35",
+            "event_id": "demo-05",
+            "extractor_revision": "conservative-zh-v1",
+            "fact_ids": [
+              "fact_d771158ec0741cd948a6",
+              "fact_3c93ead92d5f3418c162"
+            ],
+            "input_ids": [
+              "demo-05",
+              "fact_d771158ec0741cd948a6",
+              "fact_3c93ead92d5f3418c162"
+            ],
+            "reason": "同范围同属性存在不同值，缺少授权替代依据；保留全部断言并澄清",
+            "rule_version": "scope-evidence-v1",
+            "step": 5
+          }
+        ],
+        "pending": 0,
+        "requires_acknowledgement": true,
+        "risk": "review",
+        "after_hash": "4247276c146e954a896c1199f44778a8e47ecb3d0d9b78d0def56592815977c4"
+      },
+      "acknowledgement": "scripted demo acknowledgement, not a human review"
+    },
+    {
+      "step": 6,
+      "preflight_generator": "deterministic-tool-planner-v1",
+      "report": {
+        "before_checkpoint": "cp_5_ee752370738cd94f",
+        "after_checkpoint": "cp_6_dc75bf6fe6624931",
+        "tasks": [
+          {
+            "task": {
+              "task_id": "Atlas/v1/login",
+              "project": "Atlas",
+              "version_scope": "v1"
+            },
+            "outcome": "retained",
+            "before": {
+              "status": "call",
+              "tool_args": {
+                "project": "Atlas",
+                "version": "v1",
+                "operation": "login",
+                "path": "/api/login",
+                "auth_field": "api_key",
+                "payload": {
+                  "username": "demo"
+                }
+              },
+              "reason": "根据当前检查点内的适用证据生成工具调用",
+              "evidence_ids": [
+                "fact_6623ba50f4fb92947875",
+                "fact_40e90c4cf42e16c2e104"
+              ]
+            },
+            "after": {
+              "status": "call",
+              "tool_args": {
+                "project": "Atlas",
+                "version": "v1",
+                "operation": "login",
+                "path": "/api/login",
+                "auth_field": "api_key",
+                "payload": {
+                  "username": "demo"
+                }
+              },
+              "reason": "根据当前检查点内的适用证据生成工具调用",
+              "evidence_ids": [
+                "fact_6623ba50f4fb92947875",
+                "fact_40e90c4cf42e16c2e104"
+              ]
+            }
+          },
+          {
+            "task": {
+              "task_id": "Atlas/v2/login",
+              "project": "Atlas",
+              "version_scope": "v2"
+            },
+            "outcome": "recovered",
+            "before": {
+              "status": "clarify",
+              "tool_args": null,
+              "reason": "存在未决冲突，请提供授权纠错",
+              "evidence_ids": []
+            },
+            "after": {
+              "status": "call",
+              "tool_args": {
+                "project": "Atlas",
+                "version": "v2",
+                "operation": "login",
+                "path": "/auth/token",
+                "auth_field": "access_token",
+                "payload": {
+                  "username": "demo"
+                }
+              },
+              "reason": "根据当前检查点内的适用证据生成工具调用",
+              "evidence_ids": [
+                "fact_3c93ead92d5f3418c162",
+                "fact_b1d647c2629f4d8b9a29"
+              ]
+            }
+          },
+          {
+            "task": {
+              "task_id": "Beacon/v2/login",
+              "project": "Beacon",
+              "version_scope": "v2"
+            },
+            "outcome": "retained",
+            "before": {
+              "status": "call",
+              "tool_args": {
+                "project": "Beacon",
+                "version": "v2",
+                "operation": "login",
+                "path": "/session/create",
+                "auth_field": "bearer",
+                "payload": {
+                  "username": "demo"
+                }
+              },
+              "reason": "根据当前检查点内的适用证据生成工具调用",
+              "evidence_ids": [
+                "fact_4b9ccc1fa8a9725a0133",
+                "fact_fea15b32b59079ba02c2"
+              ]
+            },
+            "after": {
+              "status": "call",
+              "tool_args": {
+                "project": "Beacon",
+                "version": "v2",
+                "operation": "login",
+                "path": "/session/create",
+                "auth_field": "bearer",
+                "payload": {
+                  "username": "demo"
+                }
+              },
+              "reason": "根据当前检查点内的适用证据生成工具调用",
+              "evidence_ids": [
+                "fact_4b9ccc1fa8a9725a0133",
+                "fact_fea15b32b59079ba02c2"
+              ]
+            }
+          }
+        ],
+        "counts": {
+          "retained": 2,
+          "recovered": 1
+        },
+        "tested": 3,
+        "eligible": 2,
+        "availability_loss_rate": 0.0,
+        "unchanged_rate": 1.0,
+        "note": "按固定登录任务比较行为；不是正确率。参数变化可能是必要适应，冲突澄清可能是正确防护。无可调用旧任务时比率为空。",
+        "new_conflicts": [],
+        "decisions": [
+          {
+            "action": "supersedes",
+            "decision_id": "decision_50a3e7d7da4e8dd89637",
+            "event_id": "demo-06",
+            "extractor_revision": "conservative-zh-v1",
+            "fact_ids": [
+              "fact_3c93ead92d5f3418c162",
+              "fact_d771158ec0741cd948a6"
+            ],
+            "input_ids": [
+              "demo-06",
+              "fact_3c93ead92d5f3418c162",
+              "fact_d771158ec0741cd948a6"
+            ],
+            "reason": "本地授权来源显式指定同范围断言，建立定向替代并保留历史",
+            "rule_version": "scope-evidence-v1",
+            "step": 6
+          }
+        ],
+        "pending": 0,
+        "requires_acknowledgement": false,
+        "risk": "clear",
+        "after_hash": "2ca42aa1591e8b89e611167d04605d7d4dacd5803f25b9ca228c33bd3f8ecc18"
+      },
+      "acknowledgement": "scripted demo acknowledgement, not a human review"
+    }
+  ],
+  "recovery": {
+    "checkpoint": 3,
+    "independent": true,
+    "event_count": 3,
+    "original_events": 6
+  },
+  "note": "Synthetic demonstration. Real model task planning, deterministic preflight, local mock API scoring."
+}

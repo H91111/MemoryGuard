@@ -1,0 +1,9 @@
+{
+  "config_hash": "b5d08daf4ff97d666ded5d3ab24c318e9c354317daf77bcf5af796e3b0625915",
+  "selected_cases": 3,
+  "model_calls": 6,
+  "unchanged": 6,
+  "successes": 0,
+  "errors": 2,
+  "note": "Same frozen temperature/seed; selected failures repeated twice. Not independent samples, not added to original 216 executions, not a general variance estimate."
+}

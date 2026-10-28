@@ -1,4 +1,4 @@
-"""A fixed deterministic tool planner shared by every memory policy.
+"""Default deterministic tool planning, with an optional injected model planner.
 
 The planner receives only public task and retrieved evidence. It has no mock-tool
 specs, answer labels, event stream, or feedback-write channel.
@@ -56,13 +56,13 @@ def plan(task, context):
     return result
 
 
-def run_agent(guard, task, *, checkpoint=None, mode="character", token_budget=2048, top_k=8):
+def run_agent(guard, task, *, checkpoint=None, mode="character", token_budget=2048, top_k=8, planner=None):
     validate_task(task)
     before = guard.state(checkpoint)["state_hash"]
     start = time.perf_counter()
     scope = {"project": task.get("project"), "version_scope": task.get("version_scope"), "attributes": task.get("required", ["login_path", "auth_field"]), "as_of": task.get("as_of")}
     context = guard.retrieve(task.get("query", "登录接口 认证字段"), scope, checkpoint, token_budget, top_k, mode)
-    result = plan(task, context)
+    result = (planner or plan)(task, context)
     result["latency_ms"] = round((time.perf_counter()-start)*1000, 3)
     result["memory_state_hash"] = before
     result["context"] = context
