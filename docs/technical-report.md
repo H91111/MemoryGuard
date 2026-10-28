@@ -1,5 +1,7 @@
 # v0.2.0 技术说明
 
+本页保留 v0.2.0 确定性实现与历史回归的说明。2026-10-28 的可选模型规划、共享记忆门控和独立 day1 实验见 `evaluation/configs/day1.md`，本次原始响应位于 `output/evaluation-day1/`；不要将下文的历史数字当成模型实验。
+
 产品定位与实际操作见 product-guide.md；本轮事实性结果见 output/evaluation-v020/summary.json。原 v0.1.0 长报告在本地 legacy-v010/technical-report-v010.md，精简发布包不包含旧报告。
 
 ## 学习与控制的关系

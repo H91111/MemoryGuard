@@ -88,7 +88,35 @@ python -m memory_guard evaluate --out output/evaluation-v020
 | 同范围最近优先 B2 | 70/88 | 8/56 | 18/88 | 48/48 |
 | 规则治理 + 字符检索 B3 | 88/88 | 0/56 | 0/88 | 48/48 |
 
-这是工程回归结果。样例由开发者编写且可见，不代表独立盲测，不证明通用智能体收益；本次未重跑神经检索或生成模型实验。原包历史资料在本地交付目录的 `legacy-v010/`，不作为新版验收，精简 ZIP 不重复收录旧媒体。
+这是 v0.2.0 的确定性工程回归结果。样例由开发者编写且可见，不代表独立盲测，不证明通用智能体收益；这组数字没有生成模型参与。day1 的真实模型实验使用独立数据及输出目录，见下文。
+
+## day1 真实模型规划
+
+工具规划支持固定权重的 Qwen3-0.6B Q8_0，通过项目内 llama.cpp CPU 服务生成结构化调用或澄清。核心库仍无第三方运行依赖；首次设置会从官方来源下载约 640MB 权重及 Windows 推理程序，不进入源码包。
+
+```powershell
+python -m scripts.setup_local_planner --start
+python -m memory_guard --db runtime/demo.db demo
+python -m memory_guard --db runtime/demo.db query --project Atlas --version v2 --planner llm
+python -m examples.llm_agent --out output/day1-demo-new
+python -m evaluation.day1 --split acceptance --out output/evaluation-day1-new --model-manifest models/qwen3-0.6b/manifest.json --runtime-manifest runtime/llama-cpp/manifest.json
+```
+
+输出目录必须为新目录。`ChatPlanner` 保存提示词、请求、原始响应、token 用量和错误；没有规则参数兜底。已知缺证、冲突或不支持的范围由共享记忆门控约束为澄清，证据充分时模型选择调用及参数。SDK 可用 `run_agent(memory, task, planner=ChatPlanner())`。模型只接收任务及记忆证据，评分答案在返回后进入本地模拟器。
+
+新协议为 6 条流、每流 4 检查点和 3 个探针，三组共 216 次执行。三组使用同模型、同提示词和同一事实格式，以 2048 UTF-8 字节限制证据数组，状态/冲突等治理元数据在预算外。普通记忆也按项目、版本过滤。只在公开任务和有效评分答案不变、前次成功时统计旧任务退化。数据为开发者可见的自编合成场景，不是独立盲测。
+
+网页及 `impact.prepare/compare` 仍使用确定性规划器；day1 模型结果不能证明真实模型的预检效果。协议详见 [day1 实验说明](evaluation/configs/day1.md)。
+
+2026-10-28 已完成 216 次真实模型验收、56 项自动测试及 8 次模型演示调用。结果保留所有失败；数据是开发者可见的自编合成场景，以下执行不等于独立问题数。
+
+| 方法 | 可回答成功 | 新任务成功 | 旧任务退化 | 模型协议错误 |
+|---|---:|---:|---:|---:|
+| 无跨任务记忆 | 0/36 | 0/12 | 不适用（0/0） | 0 |
+| 同范围最近优先 | 21/36 | 11/12 | 5/10 | 3 |
+| MemoryGuard | 32/36 | 10/12 | 1/17 | 4 |
+
+治理组的新任务指标低于普通记忆，不能称为全面改善。旧任务分母也随各方法先前是否成功而异。详见 [原始汇总](output/evaluation-day1/summary.json)、[报告内容](docs/day1-report.md)、[初赛材料](docs/day1-submission.md) 和 [GitHub 状态](https://github.com/H91111/MemoryGuard/issues/1)。本地发布包通过 `python -m scripts.package_release --day1` 构建。
 
 ## 可选模型
 
@@ -102,7 +130,7 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m memory_guard --db runtime/demo.db query --project Atlas --version v2 --mode hybrid
 ```
 
-模型不可用时明确报错。Ollama 提取使用 `--extractor ollama ingest`，具体见 [API 与可选模型](docs/api.md)。本轮验证了故障降级，未下载/运行生成模型。
+模型不可用时明确报错。Ollama 提取使用 `--extractor ollama ingest`，具体见 [API 与可选模型](docs/api.md)。BGE/Ollama 是单独的可选提取/检索接口，其历史记录与 day1 的 Qwen 工具规划实验分别说明。
 
 ## 交付内容
 

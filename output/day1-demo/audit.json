@@ -1,0 +1,522 @@
+{
+  "format": "memory-guard-export-v1",
+  "policy": {
+    "rule_version": "scope-evidence-v1",
+    "stream_id": "default",
+    "trusted_sources": [
+      "maintainer"
+    ]
+  },
+  "events": [
+    {
+      "step": 1,
+      "event_id": "demo-01",
+      "input_hash": "f286ea00958c1015cdb1681481f843feea052b94e9de2474a0dd931a66e9a4a2",
+      "payload": "{\"event_id\":\"demo-01\",\"kind\":\"observation\",\"observed_at\":\"2026-10-24T10:00:00Z\",\"project\":\"Atlas\",\"source_id\":\"docs-v1\",\"step\":1,\"stream_id\":\"default\",\"text\":\"Atlas v1 登录路径为 /api/login；认证字段为 api_key。\",\"version_scope\":\"v1\"}",
+      "extractor_revision": "conservative-zh-v1"
+    },
+    {
+      "step": 2,
+      "event_id": "demo-02",
+      "input_hash": "0e3a5efc54b72044126ee37d3d71d378701155360ab296fa9b8fea51b0988a63",
+      "payload": "{\"event_id\":\"demo-02\",\"kind\":\"observation\",\"observed_at\":\"2026-10-24T10:01:00Z\",\"project\":\"Atlas\",\"source_id\":\"team-notes\",\"step\":2,\"stream_id\":\"default\",\"text\":\"Atlas v1 登录接口是 /api/login。\",\"version_scope\":\"v1\"}",
+      "extractor_revision": "conservative-zh-v1"
+    },
+    {
+      "step": 3,
+      "event_id": "demo-03",
+      "input_hash": "17fa731089d20cbe57cb079d65c0f5471feab8ee19d61cbfb8d3673f66b9ec78",
+      "payload": "{\"event_id\":\"demo-03\",\"kind\":\"observation\",\"observed_at\":\"2026-10-24T10:02:00Z\",\"project\":\"Atlas\",\"source_id\":\"docs-v2\",\"step\":3,\"stream_id\":\"default\",\"text\":\"Atlas v2 登录路径为 /auth/token；认证字段为 access_token。\",\"version_scope\":\"v2\"}",
+      "extractor_revision": "conservative-zh-v1"
+    },
+    {
+      "step": 4,
+      "event_id": "demo-04",
+      "input_hash": "e4880537e530faffe419f1259ae36a6a02d2e8f27bcfb3e01352377e06b572b7",
+      "payload": "{\"event_id\":\"demo-04\",\"kind\":\"observation\",\"observed_at\":\"2026-10-24T10:03:00Z\",\"project\":\"Beacon\",\"source_id\":\"beacon-docs\",\"step\":4,\"stream_id\":\"default\",\"text\":\"Beacon v2 登录路径为 /session/create；认证字段为 bearer。\",\"version_scope\":\"v2\"}",
+      "extractor_revision": "conservative-zh-v1"
+    },
+    {
+      "step": 5,
+      "event_id": "demo-05",
+      "input_hash": "157b7449f390a1f532591a9f7e1481b9dcd5b963eaa4ae30fb1e2541eed91805",
+      "payload": "{\"event_id\":\"demo-05\",\"kind\":\"observation\",\"observed_at\":\"2026-10-24T10:04:00Z\",\"project\":\"Atlas\",\"source_id\":\"unverified-note\",\"step\":5,\"stream_id\":\"default\",\"text\":\"Atlas v2 登录路径为 /legacy/login。\",\"version_scope\":\"v2\"}",
+      "extractor_revision": "conservative-zh-v1"
+    },
+    {
+      "step": 6,
+      "event_id": "demo-06",
+      "input_hash": "579361c3aa094f7ce17f84539bf782424171ccf9d1ca3737321be35fa950e8c7",
+      "payload": "{\"event_id\":\"demo-06\",\"kind\":\"correction\",\"observed_at\":\"2026-10-24T10:05:00Z\",\"project\":\"Atlas\",\"source_id\":\"maintainer\",\"step\":6,\"stream_id\":\"default\",\"target_id\":\"fact_d771158ec0741cd948a6\",\"text\":\"Atlas v2 登录路径为 /auth/token；修正此前错误记录。\",\"version_scope\":\"v2\"}",
+      "extractor_revision": "conservative-zh-v1"
+    }
+  ],
+  "state": {
+    "stream_id": "default",
+    "checkpoint_id": "cp_6_dc75bf6fe6624931",
+    "step": 6,
+    "events": [
+      {
+        "event_id": "demo-01",
+        "kind": "observation",
+        "observed_at": "2026-10-24T10:00:00Z",
+        "project": "Atlas",
+        "source_id": "docs-v1",
+        "step": 1,
+        "stream_id": "default",
+        "text": "Atlas v1 登录路径为 /api/login；认证字段为 api_key。",
+        "version_scope": "v1"
+      },
+      {
+        "event_id": "demo-02",
+        "kind": "observation",
+        "observed_at": "2026-10-24T10:01:00Z",
+        "project": "Atlas",
+        "source_id": "team-notes",
+        "step": 2,
+        "stream_id": "default",
+        "text": "Atlas v1 登录接口是 /api/login。",
+        "version_scope": "v1"
+      },
+      {
+        "event_id": "demo-03",
+        "kind": "observation",
+        "observed_at": "2026-10-24T10:02:00Z",
+        "project": "Atlas",
+        "source_id": "docs-v2",
+        "step": 3,
+        "stream_id": "default",
+        "text": "Atlas v2 登录路径为 /auth/token；认证字段为 access_token。",
+        "version_scope": "v2"
+      },
+      {
+        "event_id": "demo-04",
+        "kind": "observation",
+        "observed_at": "2026-10-24T10:03:00Z",
+        "project": "Beacon",
+        "source_id": "beacon-docs",
+        "step": 4,
+        "stream_id": "default",
+        "text": "Beacon v2 登录路径为 /session/create；认证字段为 bearer。",
+        "version_scope": "v2"
+      },
+      {
+        "event_id": "demo-05",
+        "kind": "observation",
+        "observed_at": "2026-10-24T10:04:00Z",
+        "project": "Atlas",
+        "source_id": "unverified-note",
+        "step": 5,
+        "stream_id": "default",
+        "text": "Atlas v2 登录路径为 /legacy/login。",
+        "version_scope": "v2"
+      },
+      {
+        "event_id": "demo-06",
+        "kind": "correction",
+        "observed_at": "2026-10-24T10:05:00Z",
+        "project": "Atlas",
+        "source_id": "maintainer",
+        "step": 6,
+        "stream_id": "default",
+        "target_id": "fact_d771158ec0741cd948a6",
+        "text": "Atlas v2 登录路径为 /auth/token；修正此前错误记录。",
+        "version_scope": "v2"
+      }
+    ],
+    "facts": [
+      {
+        "attribute": "auth_field",
+        "evidence_span": [
+          26,
+          39
+        ],
+        "project": "Atlas",
+        "subject": "api",
+        "valid_from": null,
+        "valid_to": null,
+        "value": "api_key",
+        "version_scope": "v1",
+        "fact_id": "fact_40e90c4cf42e16c2e104",
+        "created_step": 1,
+        "evidence": [
+          {
+            "event_id": "demo-01",
+            "step": 1,
+            "span": [
+              26,
+              39
+            ],
+            "source_id": "docs-v1",
+            "text": "Atlas v1 登录路径为 /api/login；认证字段为 api_key。"
+          }
+        ],
+        "text": "Atlas v1 登录路径为 /api/login；认证字段为 api_key。",
+        "status": "active"
+      },
+      {
+        "attribute": "login_path",
+        "evidence_span": [
+          9,
+          25
+        ],
+        "project": "Atlas",
+        "subject": "api",
+        "valid_from": null,
+        "valid_to": null,
+        "value": "/api/login",
+        "version_scope": "v1",
+        "fact_id": "fact_6623ba50f4fb92947875",
+        "created_step": 1,
+        "evidence": [
+          {
+            "event_id": "demo-01",
+            "step": 1,
+            "span": [
+              9,
+              25
+            ],
+            "source_id": "docs-v1",
+            "text": "Atlas v1 登录路径为 /api/login；认证字段为 api_key。"
+          },
+          {
+            "event_id": "demo-02",
+            "step": 2,
+            "span": [
+              9,
+              25
+            ],
+            "source_id": "team-notes",
+            "text": "Atlas v1 登录接口是 /api/login。"
+          }
+        ],
+        "text": "Atlas v1 登录路径为 /api/login；认证字段为 api_key。",
+        "status": "active"
+      },
+      {
+        "attribute": "login_path",
+        "evidence_span": [
+          9,
+          26
+        ],
+        "project": "Atlas",
+        "subject": "api",
+        "valid_from": null,
+        "valid_to": null,
+        "value": "/auth/token",
+        "version_scope": "v2",
+        "fact_id": "fact_3c93ead92d5f3418c162",
+        "created_step": 3,
+        "evidence": [
+          {
+            "event_id": "demo-03",
+            "step": 3,
+            "span": [
+              9,
+              26
+            ],
+            "source_id": "docs-v2",
+            "text": "Atlas v2 登录路径为 /auth/token；认证字段为 access_token。"
+          },
+          {
+            "event_id": "demo-06",
+            "step": 6,
+            "span": [
+              9,
+              26
+            ],
+            "source_id": "maintainer",
+            "text": "Atlas v2 登录路径为 /auth/token；修正此前错误记录。"
+          }
+        ],
+        "text": "Atlas v2 登录路径为 /auth/token；认证字段为 access_token。",
+        "status": "active"
+      },
+      {
+        "attribute": "auth_field",
+        "evidence_span": [
+          27,
+          45
+        ],
+        "project": "Atlas",
+        "subject": "api",
+        "valid_from": null,
+        "valid_to": null,
+        "value": "access_token",
+        "version_scope": "v2",
+        "fact_id": "fact_b1d647c2629f4d8b9a29",
+        "created_step": 3,
+        "evidence": [
+          {
+            "event_id": "demo-03",
+            "step": 3,
+            "span": [
+              27,
+              45
+            ],
+            "source_id": "docs-v2",
+            "text": "Atlas v2 登录路径为 /auth/token；认证字段为 access_token。"
+          }
+        ],
+        "text": "Atlas v2 登录路径为 /auth/token；认证字段为 access_token。",
+        "status": "active"
+      },
+      {
+        "attribute": "login_path",
+        "evidence_span": [
+          10,
+          31
+        ],
+        "project": "Beacon",
+        "subject": "api",
+        "valid_from": null,
+        "valid_to": null,
+        "value": "/session/create",
+        "version_scope": "v2",
+        "fact_id": "fact_4b9ccc1fa8a9725a0133",
+        "created_step": 4,
+        "evidence": [
+          {
+            "event_id": "demo-04",
+            "step": 4,
+            "span": [
+              10,
+              31
+            ],
+            "source_id": "beacon-docs",
+            "text": "Beacon v2 登录路径为 /session/create；认证字段为 bearer。"
+          }
+        ],
+        "text": "Beacon v2 登录路径为 /session/create；认证字段为 bearer。",
+        "status": "active"
+      },
+      {
+        "attribute": "auth_field",
+        "evidence_span": [
+          32,
+          44
+        ],
+        "project": "Beacon",
+        "subject": "api",
+        "valid_from": null,
+        "valid_to": null,
+        "value": "bearer",
+        "version_scope": "v2",
+        "fact_id": "fact_fea15b32b59079ba02c2",
+        "created_step": 4,
+        "evidence": [
+          {
+            "event_id": "demo-04",
+            "step": 4,
+            "span": [
+              32,
+              44
+            ],
+            "source_id": "beacon-docs",
+            "text": "Beacon v2 登录路径为 /session/create；认证字段为 bearer。"
+          }
+        ],
+        "text": "Beacon v2 登录路径为 /session/create；认证字段为 bearer。",
+        "status": "active"
+      },
+      {
+        "attribute": "login_path",
+        "evidence_span": [
+          9,
+          28
+        ],
+        "project": "Atlas",
+        "subject": "api",
+        "valid_from": null,
+        "valid_to": null,
+        "value": "/legacy/login",
+        "version_scope": "v2",
+        "fact_id": "fact_d771158ec0741cd948a6",
+        "created_step": 5,
+        "evidence": [
+          {
+            "event_id": "demo-05",
+            "step": 5,
+            "span": [
+              9,
+              28
+            ],
+            "source_id": "unverified-note",
+            "text": "Atlas v2 登录路径为 /legacy/login。"
+          }
+        ],
+        "text": "Atlas v2 登录路径为 /legacy/login。",
+        "status": "superseded"
+      }
+    ],
+    "relations": [
+      {
+        "relation_id": "relation_dbea55e8ce1fe4454a92",
+        "step": 5,
+        "left_id": "fact_d771158ec0741cd948a6",
+        "right_id": "fact_3c93ead92d5f3418c162",
+        "relation": "conflicts",
+        "basis_event_id": "demo-05"
+      },
+      {
+        "relation_id": "relation_274d3aa84e9ca6025c5d",
+        "step": 6,
+        "left_id": "fact_3c93ead92d5f3418c162",
+        "right_id": "fact_d771158ec0741cd948a6",
+        "relation": "supersedes",
+        "basis_event_id": "demo-06"
+      }
+    ],
+    "decisions": [
+      {
+        "action": "supplement",
+        "decision_id": "decision_cb8e205c9600b48d97c7",
+        "event_id": "demo-01",
+        "extractor_revision": "conservative-zh-v1",
+        "fact_ids": [
+          "fact_40e90c4cf42e16c2e104"
+        ],
+        "input_ids": [
+          "demo-01",
+          "fact_40e90c4cf42e16c2e104"
+        ],
+        "reason": "新增独立属性事实",
+        "rule_version": "scope-evidence-v1",
+        "step": 1
+      },
+      {
+        "action": "supplement",
+        "decision_id": "decision_d8b2adf307437d508446",
+        "event_id": "demo-01",
+        "extractor_revision": "conservative-zh-v1",
+        "fact_ids": [
+          "fact_6623ba50f4fb92947875"
+        ],
+        "input_ids": [
+          "demo-01",
+          "fact_6623ba50f4fb92947875"
+        ],
+        "reason": "新增独立属性事实",
+        "rule_version": "scope-evidence-v1",
+        "step": 1
+      },
+      {
+        "action": "duplicate",
+        "decision_id": "decision_7aed6daa1fcd64a47cbf",
+        "event_id": "demo-02",
+        "extractor_revision": "conservative-zh-v1",
+        "fact_ids": [
+          "fact_6623ba50f4fb92947875"
+        ],
+        "input_ids": [
+          "demo-02",
+          "fact_6623ba50f4fb92947875"
+        ],
+        "reason": "同范围、同值、同有效时间，关联原文证据，不新增逻辑事实",
+        "rule_version": "scope-evidence-v1",
+        "step": 2
+      },
+      {
+        "action": "coexist",
+        "decision_id": "decision_7c6b2c61798bfd530579",
+        "event_id": "demo-03",
+        "extractor_revision": "conservative-zh-v1",
+        "fact_ids": [
+          "fact_b1d647c2629f4d8b9a29"
+        ],
+        "input_ids": [
+          "demo-03",
+          "fact_b1d647c2629f4d8b9a29"
+        ],
+        "reason": "不同项目/版本/有效时间并存",
+        "rule_version": "scope-evidence-v1",
+        "step": 3
+      },
+      {
+        "action": "coexist",
+        "decision_id": "decision_d0e63a87b4af965bb128",
+        "event_id": "demo-03",
+        "extractor_revision": "conservative-zh-v1",
+        "fact_ids": [
+          "fact_3c93ead92d5f3418c162"
+        ],
+        "input_ids": [
+          "demo-03",
+          "fact_3c93ead92d5f3418c162"
+        ],
+        "reason": "不同项目/版本/有效时间并存",
+        "rule_version": "scope-evidence-v1",
+        "step": 3
+      },
+      {
+        "action": "coexist",
+        "decision_id": "decision_e14eec539b6a005c1f99",
+        "event_id": "demo-04",
+        "extractor_revision": "conservative-zh-v1",
+        "fact_ids": [
+          "fact_4b9ccc1fa8a9725a0133"
+        ],
+        "input_ids": [
+          "demo-04",
+          "fact_4b9ccc1fa8a9725a0133"
+        ],
+        "reason": "不同项目/版本/有效时间并存",
+        "rule_version": "scope-evidence-v1",
+        "step": 4
+      },
+      {
+        "action": "coexist",
+        "decision_id": "decision_fec1219d41b88c4c0a02",
+        "event_id": "demo-04",
+        "extractor_revision": "conservative-zh-v1",
+        "fact_ids": [
+          "fact_fea15b32b59079ba02c2"
+        ],
+        "input_ids": [
+          "demo-04",
+          "fact_fea15b32b59079ba02c2"
+        ],
+        "reason": "不同项目/版本/有效时间并存",
+        "rule_version": "scope-evidence-v1",
+        "step": 4
+      },
+      {
+        "action": "conflicts",
+        "decision_id": "decision_1bb7e4d50b55390f6a35",
+        "event_id": "demo-05",
+        "extractor_revision": "conservative-zh-v1",
+        "fact_ids": [
+          "fact_d771158ec0741cd948a6",
+          "fact_3c93ead92d5f3418c162"
+        ],
+        "input_ids": [
+          "demo-05",
+          "fact_d771158ec0741cd948a6",
+          "fact_3c93ead92d5f3418c162"
+        ],
+        "reason": "同范围同属性存在不同值，缺少授权替代依据；保留全部断言并澄清",
+        "rule_version": "scope-evidence-v1",
+        "step": 5
+      },
+      {
+        "action": "supersedes",
+        "decision_id": "decision_50a3e7d7da4e8dd89637",
+        "event_id": "demo-06",
+        "extractor_revision": "conservative-zh-v1",
+        "fact_ids": [
+          "fact_3c93ead92d5f3418c162",
+          "fact_d771158ec0741cd948a6"
+        ],
+        "input_ids": [
+          "demo-06",
+          "fact_3c93ead92d5f3418c162",
+          "fact_d771158ec0741cd948a6"
+        ],
+        "reason": "本地授权来源显式指定同范围断言，建立定向替代并保留历史",
+        "rule_version": "scope-evidence-v1",
+        "step": 6
+      }
+    ],
+    "state_hash": "2ca42aa1591e8b89e611167d04605d7d4dacd5803f25b9ca228c33bd3f8ecc18"
+  }
+}

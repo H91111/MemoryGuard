@@ -40,6 +40,9 @@ def main(argv=None):
     s.add_argument("--as-of")
     s.add_argument("--mode", choices=["character", "semantic", "hybrid"], default="character")
     s.add_argument("--budget", type=int, default=2048)
+    s.add_argument("--planner", choices=["deterministic", "llm"], default="deterministic")
+    s.add_argument("--model", default="qwen3-0.6b-q8_0")
+    s.add_argument("--base-url", default="http://127.0.0.1:18080/v1")
     s = sub.add_parser("inspect")
     s.add_argument("fact_id")
     s = sub.add_parser("export")
@@ -105,7 +108,14 @@ def main(argv=None):
             elif args.command == "correct":
                 emit(m.correct(args.target_id, json.loads(Path(args.file).read_text(encoding="utf-8-sig"))))
             elif args.command == "query":
-                emit(run_agent(m, {"project": args.project, "version_scope": args.version, "as_of": args.as_of}, checkpoint=args.checkpoint, mode=args.mode, token_budget=args.budget))
+                planner = None
+                if args.planner == "llm":
+                    from .llm import ChatPlanner
+                    planner = ChatPlanner(args.model, args.base_url)
+                result = run_agent(m, {"project": args.project, "version_scope": args.version, "as_of": args.as_of}, checkpoint=args.checkpoint, mode=args.mode, token_budget=args.budget, planner=planner)
+                emit(result)
+                if result['status'] == 'error':
+                    return 1
             elif args.command == "inspect":
                 emit(m.inspect(args.fact_id))
             elif args.command == "export":

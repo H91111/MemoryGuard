@@ -1,0 +1,43 @@
+{
+  "duration_seconds": 281.523,
+  "width": 1920,
+  "height": 1080,
+  "bytes": 10552580,
+  "speech": "Windows Huihui synthetic voice",
+  "source_config_hash": "b5d08daf4ff97d666ded5d3ab24c318e9c354317daf77bcf5af796e3b0625915",
+  "presentation": "replay of real logs, not live screen recording",
+  "scenes": [
+    {
+      "title": "让新知识进入，也保留旧任务",
+      "seconds": 35.867
+    },
+    {
+      "title": "真实模型根据证据生成调用",
+      "seconds": 34.062
+    },
+    {
+      "title": "版本并存，回测仍有效的 v1",
+      "seconds": 33.241
+    },
+    {
+      "title": "重复记录会占用有限证据预算",
+      "seconds": 34.842
+    },
+    {
+      "title": "冲突与授权纠错",
+      "seconds": 35.137
+    },
+    {
+      "title": "预检、确认和历史恢复",
+      "seconds": 37.381
+    },
+    {
+      "title": "相同模型下的实际对照结果",
+      "seconds": 34.932
+    },
+    {
+      "title": "代码、数据和记录都可复用",
+      "seconds": 36.062
+    }
+  ]
+}

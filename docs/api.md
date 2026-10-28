@@ -67,4 +67,25 @@ $env:MEMORY_GUARD_OLLAMA = 'http://127.0.0.1:11434'
 python -m memory_guard --extractor ollama --db runtime/model.db ingest data/examples/new_event.json
 ```
 
-候选须通过原文跨度和值检查；失败进入待复核。模型不能授予纠错权限。本轮只验证接口失败路径，没有运行真实生成模型。网页固定规则提取；Python prepare 支持传入使用 OllamaExtractor 的 MemoryGuard。
+候选须通过原文跨度和值检查；失败进入待复核。模型不能授予纠错权限。v0.2.0 只验证此提取接口失败路径；day1 未运行 Ollama 提取。网页固定规则提取；Python prepare 支持传入使用 OllamaExtractor 的 MemoryGuard。
+
+## day1 可选真实模型工具规划
+
+```python
+from memory_guard.agent import run_agent
+from memory_guard.llm import ChatPlanner
+
+planner = ChatPlanner(model='qwen3-0.6b-q8_0', base_url='http://127.0.0.1:18080/v1')
+result = run_agent(memory, {
+    'project': 'Atlas', 'version_scope': 'v2',
+    'query': '请使用第二版文档规定的登录 API。',
+}, planner=planner)
+```
+
+`run_agent(..., planner=None)` 保持原确定性行为；`planner(task, context)` 可注入真实规划器。`ChatPlanner` 使用标准库请求 chat-completions，固定 temperature=0、seed=42、max_tokens=384，关闭 thinking，并使用 JSON schema 限制输出结构。已有缺证、冲突或不支持的范围将 schema 约束为 `clarify`，模型生成澄清文本；证据充分时由模型选择调用及参数。所有策略共用这一适配器，不重试、不用规则规划器修补参数。服务未遵守约束时返回 `error`。
+
+`result.status` 为 `call`、`clarify` 或 `error`。`error` 表示网络、截断、JSON 或协议错误，不能当成正确澄清。`tool_args` 的范围、载荷和引用格式经过校验；路径、认证字段是否正确由独立模拟器评分。SDK 的返回值含 `model_trace`（请求、原始响应与错误）和实际 `token_usage`；这些是运行记录，调用者应自行决定保存位置。
+
+`python -m memory_guard ... query --planner llm` 提供 CLI 入口，`--model` 和 `--base-url` 可选择兼容服务。项目内本地服务通过 `python -m scripts.setup_local_planner --start` 设置，不改系统脚本执行策略。`runtime/llama-cpp/server.json` 记录 PID 和启动参数；用 `Stop-Process -Id <PID>` 停止对应服务。
+
+`examples.llm_agent` 演示真实模型规划、确定性预检、脚本确认写入、冲突澄清与历史分支，独立输出原始记录。脚本中的 acknowledge=True 是预设演示行为，不表示人工审核。网页和影响预检尚未注入此模型；不要把 day1 的策略对照称为模型预检消融实验。

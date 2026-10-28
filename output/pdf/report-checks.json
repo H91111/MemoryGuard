@@ -1,0 +1,10 @@
+{
+  "file": "output\\pdf\\memoryguard-day1-report.pdf",
+  "bytes": 289686,
+  "sha256": "66229c69c11cea314189c1a990ad87aa8a475d069eda7d66a59d135d32bd6be4",
+  "results": "C:\\memoryGuard\\output\\evaluation-day1",
+  "config_hash": "b5d08daf4ff97d666ded5d3ab24c318e9c354317daf77bcf5af796e3b0625915",
+  "expected_pages": 11,
+  "anonymous": true,
+  "pages": 11
+}

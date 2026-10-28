@@ -1,0 +1,10 @@
+{
+  "python": "3.12.14",
+  "sqlite": "3.53.1",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "inference": "CPU, llama.cpp b11951, threads=4, context=4096, parallel_slots=1",
+  "model": "Qwen/Qwen3-0.6B-GGUF Q8_0",
+  "test_result": "56 tests passed",
+  "preflight": "deterministic login planner",
+  "demo_acknowledgement": "scripted, not human approval"
+}
